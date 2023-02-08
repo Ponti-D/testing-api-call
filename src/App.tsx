@@ -10,13 +10,12 @@ function App() {
 
   const getSWAPIPeople = async () => {
     try {
-      const response = await fetch("https://swapi.dev/api/people/1/");
+      let response = await fetch("https://swapi.dev/api/people/1/");
       if (response.status === 500) {
         setPeople("Oops… something went wrong, try again");
       }
       const result = await response.json();
-
-      setPeople(result.name);
+        setPeople(result.name);
     } catch (error) {
       setPeople("Oops… something went wrong, try again");
     }
